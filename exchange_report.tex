@@ -1,0 +1,115 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage[left=2.5cm,top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{moresize}
+\usepackage{fontawesome5}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+\usepackage{tocloft}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, calc}
+\usepackage{array}
+\usepackage{dirtytalk}
+\usepackage{ctable}
+\usepackage{float}
+\usepackage{hhline}
+\usepackage[bottom]{footmisc}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{lmodern}
+\usepackage{makecell}
+\renewcommand{\thefootnote}{\dag}
+
+\newcommand\rating[2]{%
+  \pgfmathsetmacro\pgfxa{#1 + 1}%
+  \tikzstyle{scorestars}=[star, star points=5, star point ratio=2.25, draw, inner sep=0.15em, anchor=outer point 3]%
+  \begin{tikzpicture}[baseline]
+    \foreach \i in {1, ..., #2} {
+      \pgfmathparse{\i<=#1 ? "black" : "white"}
+      \edef\starcolor{\pgfmathresult}
+      \draw (\i*1.3em, 0) node[name=star\i, scorestars, fill=\starcolor]  {};
+    }
+    \pgfmathparse{#1>int(#1) ? int(#1+1) : 0}
+    \let\partstar=\pgfmathresult
+    \ifnum\partstar>0
+      \pgfmathsetmacro\starpart{#1-(int(#1)}
+      \path [clip] ($(star\partstar.outer point 3)!(star\partstar.outer point 2)!(star\partstar.outer point 4)$) rectangle 
+      ($(star\partstar.outer point 2 |- star\partstar.outer point 1)!\starpart!(star\partstar.outer point 1 -| star\partstar.outer point 5)$);
+      \fill (\partstar*1em, 0) node[scorestars, fill=yellow]  {};
+    \fi
+  \end{tikzpicture}%
+}
+
+% Adjust the line spacing in the Table of Contents
+\setlength{\cftbeforesecskip}{8pt}  % Adjust spacing before sections
+\setlength{\cftbeforesubsecskip}{8pt} % Adjust spacing before subsections
+\setlength{\cftbeforechapskip}{15pt}
+
+% Färg och rubrikformat
+\definecolor{black}{RGB}{0, 0, 0}
+\definecolor{myblue}{RGB}{45, 62, 80}
+\definecolor{mygray}{RGB}{100, 100, 100}
+\titleformat{\chapter}[hang]{\Huge\bfseries\color{black}}{\thechapter.}{20pt}{}
+\titleformat{\section}[hang]{\Large\bfseries\color{black}}{\thesection}{12pt}{}
+\titleformat{\subsection}[hang]{\large\bfseries\color{black}}{\thesubsection}{10pt}{}
+
+\begin{document}
+% Omslagssida
+\thispagestyle{empty}
+\vspace*{0.5cm}
+\begin{center}
+    {\Huge{\textbf{\noindent\hrulefill \hspace{1cm}Travel Report\hspace{1cm}\noindent\hrulefill}}} \\
+    \vspace{0.5cm}
+    {\large{\textsc{Nanyang Technological University (NTU) \\[0.1cm] SINGAPORE \\[0.2cm] Spring Term, 2025 \\[1cm]}}} 
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.99\linewidth]{figs/title_fig.jpeg}
+    \end{figure}
+\end{center}
+{\Large \textbf{Oscar Stommendal}}
+\vspace{-0.3cm}
+
+\noindent\hrulefill
+
+\textsc{B.Sc. Engineering Physics \hspace{0.15cm} $\vert$ \hspace{0.15cm} M.Sc. Physics (MPPHS) \\[0.2cm]
+    Contact:} \begin{tabular}[c]{l l l}
+    \hspace{0.15cm}
+    \href{mailto:oscar.stommendal01@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ \textsc{Email}} \hspace{0.15cm} $\vert$ \hspace{0.2cm}
+    \href{https://linkedin.com/in/oscar-stommendal} {\raisebox{-0.05\height}\faLinkedin\ \textsc{LinkedIn}}
+\end{tabular}
+\\[-1cm]
+\begin{center}
+\noindent\hrulefill \\[1cm]
+\textsc{\today}
+\vfill
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth, trim ={1.5cm, 3.5cm, 2.5cm, 3.5cm},clip]{figs/main_fig.pdf}
+    \label{fig:title}
+\end{figure}
+\end{center}
+
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+\include{exchange_report/intro}
+
+\include{exchange_report/preps}
+
+\include{exchange_report/life}
+
+\include{exchange_report/courses}
+
+\include{exchange_report/discovering}
+
+\input{exchange_report/appendix}
+
+\end{document}
