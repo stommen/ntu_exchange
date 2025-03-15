@@ -1,0 +1,10 @@
+fidelity: 0.9924887193903698
+trace: 1.0000000000000022
+eigvals: [0.99325911 0.00674089 0.         0.        ]
+raw_eigvals: [ 1.00077405  0.01425583  0.00369538 -0.01872526]
+rescaled_psd: True
+fitter_metadata: {'fitter': 'linear_inversion', 'fitter_time': 0.007189035415649414}
+conditional_probability: 1.0
+positive: True
+experiment: StateTomography
+run_time: None

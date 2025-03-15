@@ -1,0 +1,73 @@
+\documentclass[a4paper,12pt]{article}
+
+\input{preamble}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        % NTU Logo
+        \includegraphics[width=0.7\textwidth]{figs/NTUlogo.png} 
+        \\[2cm]
+        
+        {\huge \textbf{Quantum State Tomography of a Two-Level System}} 
+        \\[2cm]
+        
+        {\large \textbf{Oscar Stommendal}} 
+        \\[0.2cm]
+        
+        {\large \href{mailto:N2402294F@e.ntu.edu.sg}{\textsc{N2402294F@e.ntu.edu.sg}}}
+        \\[2cm]
+        
+        {\textbf{SCHOOL OF PHYSICAL AND MATHEMATICAL SCIENCES}} 
+        \\[2cm]
+        
+        {\Large PH3406 Open Quantum Systems} 
+        \\[0.5cm]
+        
+        {\Large \textbf{Project Report}} 
+        \\[2cm]
+
+        % \DTMlangsetup{showdayofmonth=false}
+        \vfill
+        {\Large \today}
+    \end{center}
+\end{titlepage}
+
+\section{Introduction}
+The last decade, the field of quantum information and computing has seen rapid development. Quantum computers have showed the potential to outperform classical computers in certain tasks, and many believe that we are on the edge of a quantum revolution \cite{outperform} \cite{revolution}. In December 2024, several publicly traded companies reached new records in share prices \cite{rocket}. So, the interest in quantum computing is growing, also outside of academia, and the field is attracting more and more attention. 
+
+However, the technology is still in its first phase, and faces many challenges \cite{challenge}. These include the need for error correction due to noise, upscaling of the number qubits and hardware development. In this report, we will focus on \textit{quantum state tomography}. This is a method used to characterize the state of a quantum system, which has several important applications within quantum computing, for example in error correction.
+
+\section{Theory}
+This section provides the reader with the necessary background to understand the rest of the report. I will start by introducing the basic concepts of quantum computing, followed by a more detailed explanation of quantum state tomography.
+\subsection{Introduction to Open Quantum Systems}
+When studying closed systems within quantum mechanics, we describe the system by a state vector $\ket{\psi}$, which evolves according to the Schrödinger equation,
+\begin{equation}
+    i\hbar \frac{d}{dt} \ket{\psi} = \hat{H} \ket{\psi},
+\end{equation}
+where $\hat{H}$ is the Hamiltonian, describing the energy of the system. However, in reality, no system is completely isolated, and we must consider the interaction with the environment. This leads to the concept of open quantum systems, where the state of the system is described by a density matrix $\hat{\rho}$ \cite{nielsen_chuang}. This matrix is essentially a generalization of the state vector, and contains the same information, with the difference that it can also describe mixed states. Mixed states are states that are not pure, but rather a statistical mixture of pure states. The density matrix is defined as
+\begin{equation}
+    \rho = \sum_i p_i \ket{\psi_i} \bra{\psi_i},
+\end{equation}
+where $p_i$ is the probability of the system being in the state $\ket{\psi_i}$. 
+% \subsection{Introduction to Quantum Computing}
+% As the introduction suggested, the quantum computing field is growing rapidly. One part of the reason for this is the potential of quantum computers to outperform classical computers in certain tasks. Contrary to classical computers, which processes data through bits that can be either 0 or 1, quantum computers use quantum bits, or \textit{qubits}. Mathematically, we express these as a vector in a two-dimensional Hilbert space, $\mathcal{H}$, according to
+% \begin{equation}
+%     \ket{\psi} = \alpha \ket{0} + \beta \ket{1},
+% \end{equation}
+% where $\alpha$ and $\beta$ are complex numbers, and $\ket{0}$ and $\ket{1}$ are the basis states of the qubit. The state $\ket{\psi}$ is normalized, meaning that $|\alpha|^2 + |\beta|^2 = 1$.
+\subsection{Quantum State Tomography}
+Quantum state tomography is a method used to characterize the state of a quantum system. The idea is to perform measurements on the system, and use the results to reconstruct the density matrix $\rho$.
+\section{Methodology}
+The foundation of the method of choice in this project is taken from \href{https://qiskit-community.github.io/qiskit-experiments/manuals/verification/state_tomography.html}{Qiskit's} experiment manual on quantum state tomography. Some adjustments have been made to the code, in order to fit the specific needs of this project. The code is written in Python, and uses the Qiskit library to simulate the quantum system.
+\section{Results}
+\subsection{Without Noise}
+\subsection{With Noise}
+\section{Discussion}
+
+\newpage
+\thispagestyle{empty}
+\printbibliography
+
+\end{document}

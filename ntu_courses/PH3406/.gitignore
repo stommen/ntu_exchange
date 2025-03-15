@@ -1,0 +1,4 @@
+build/*
+*.bib
+preamble.tex
+hello_world.ipynb
