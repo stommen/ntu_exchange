@@ -14,6 +14,12 @@ int getValidInt() {
 
     int iD;
     cin >> iD;
+    if (cin.fail()) {
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "Invalid input! Please enter an integer: ";
+        iD = getValidInt();
+    }
 
     return iD;
 }
@@ -23,6 +29,12 @@ float getValidFloat() {
 
     float mark;
     cin >> mark;
+    if (cin.fail()) {
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "Invalid input! Please enter a valid float number: ";
+        mark = getValidFloat();
+    }
 
     return mark;
 }
@@ -35,7 +47,6 @@ int main() {
     while (true) {
         // Get student name
         cout << "Enter student name (or enter '#' to exit): ";
-        cin.ignore();
         cin.getline(name, 50);
 
         // Check if user wants to exit
@@ -46,10 +57,12 @@ int main() {
         // Get student ID
         cout << "Enter student ID (integer): ";
         studentID = getValidInt();
+        cin.ignore(1000, '\n');
 
         // Get math mark
         cout << "Enter math mark (float): ";
         mathMark = getValidFloat();
+        cin.ignore(1000, '\n');
 
         // Display student information
         cout << "\nStudent Information:\n";
