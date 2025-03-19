@@ -32,7 +32,7 @@ float calculate(float num1, float num2, char op)
     {
         if (isZero(num2)) 
         {
-            cout << "Error: Division by zero" << endl;
+            cout << "Error: Division by zero!" << endl;
             return 0;
         }
         return num1 / num2;
