@@ -1,7 +1,7 @@
-///////// Student Info/////////
+///////// Student Info /////////
 //
-//           Your Name:__________
-//      Your NTU Email:__________
+//           Your Name: Oscar Stommendal
+//      Your NTU Email: N2402294F@e.ntu.edu.sg
 //
 //
 //
@@ -64,12 +64,21 @@ void insertNode2ListEnd(StringNode*& head, const string& newName) {
 
 // Function to reverse the linked list
 void reverseLinkedList(StringNode*& head) {
-    // TO-DO: WRITE YOUR CODE HERE
-    //
-    //
-    //
+    if (head == nullptr) {
+        return; // List empty
+    }
 
+    StringNode* prev = nullptr;
+    StringNode* current = head;
+    StringNode* next = nullptr;
 
+    while (current != nullptr) {
+        next = current->next; // Store the next node
+        current->next = prev; // Reverse the current node
+        prev = current; // Move pointers one position ahead
+        current = next;
+    }
+    head = prev; // Update the head of the linked list
 }
 
 int main() {

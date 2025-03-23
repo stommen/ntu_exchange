@@ -5,8 +5,8 @@ CXX = /usr/bin/clang++
 CXXFLAGS = -std=gnu++14 -stdlib=libc++ -fcolor-diagnostics -fansi-escape-codes -g
 
 # Directories
-LAB1 = lab1_starting_code
-LAB2 = lab2_starting_code
+LAB1 = lab_1_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
+LAB2 = lab_2_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
 BUILD_DIR = build
 
 # Ensure the build directory exists
@@ -30,13 +30,13 @@ $(BUILD_DIR)/lab1_q2: $(LAB1)/lab1_q2.cpp
 # Build lab2_q1
 lab2_q1: $(BUILD_DIR)/lab2_q1
 
-$(BUILD_DIR)/lab2_q1: $(LAB2)/lab2_q1.cpp
+$(BUILD_DIR)/lab2_q1: $(LAB2)/lab2_q1_getNthNodeValue.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# Build lab3_q1
-lab3_q1: $(BUILD_DIR)/lab3_q1
+# Build lab2_q2
+lab2_q2: $(BUILD_DIR)/lab2_q2
 
-$(BUILD_DIR)/lab3_q1: $(LAB3)/lab3_q1.cpp
+$(BUILD_DIR)/lab2_q2: $(LAB2)/lab2_q2_reverseLinkedList.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 # Clean the build directory

@@ -1,11 +1,10 @@
-///////// Student Info/////////
+///////// Student Info /////////
 //
-//           Your Name:__________
-//      Your NTU Email:__________
+//           Your Name: Oscar Stommendal
+//      Your NTU Email: N2402294F@e.ntu.edu.sg
 //
 //
 //
-
 
 #include <iostream>
 using namespace std;
@@ -32,6 +31,7 @@ void insertNode2ListEnd(MarkNode*& head, int newValue) {
     }
     temp->next = newNode; // Link last node to new node
 }
+
 void destroyList(MarkNode*& head)
 {
     MarkNode *nodePtr = head;  // Start at head of list
@@ -52,14 +52,18 @@ void destroyList(MarkNode*& head)
 
 // Function to get the value of the n-th node
 int getNthNodeValue(const MarkNode* head, int n) {
-    // TO-DO: WRITE YOUR CODE HERE
-    //
-    //
-    //
+    if (head == nullptr) {
+        return -1; // Return -1 if the list is empty
+    }
 
-
-    
-
+    const MarkNode* current = head;
+    for (int i = 1; i < n; i++) {
+        if (current->next == nullptr) {
+            return -1; // Return -1 if n exceeds the length of the list
+        }
+        current = current->next;
+    }
+    return current->mark;
 }
 
 int main() {
