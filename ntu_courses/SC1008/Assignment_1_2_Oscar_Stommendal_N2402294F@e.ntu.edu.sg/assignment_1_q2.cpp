@@ -6,7 +6,6 @@ struct StringNode {
     StringNode* next;
 };
 
-
 void printList(const StringNode* head) {
     const StringNode* temp = head;
     while (temp) {
@@ -40,14 +39,27 @@ void freeList(StringNode*& head) {
 }
 
 // Remove duplicate names from the linked list
-void removeDuplicatedNames(StringNode*& head) {
-    // TO-DO: Write Your Code Here
-    //
-    //
-    //
-
-
-
+void removeDuplicatedNames(StringNode*& head) 
+{
+    StringNode* current = head;
+    while (current) 
+    {
+        StringNode* runner = current;
+        while (runner->next) 
+        {
+            if (runner->next->name == current->name)
+            {
+                StringNode* duplicate = runner->next;
+                runner->next = runner->next->next;
+                delete duplicate;
+            } 
+            else 
+            {
+                runner = runner->next;
+            }
+        }
+        current = current->next;
+    }
 }
 
 int main() {

@@ -1,7 +1,7 @@
-///////// Student Info/////////
+///////// Student Info /////////
 //
-//           Your Name:__________
-//      Your NTU Email:__________
+//           Your Name: Oscar Stommendal
+//      Your NTU Email: N2402294F@e.ntu.edu.sg
 //
 //
 //
@@ -17,35 +17,44 @@ private:
 
 public:
     // Constructor
-    Product(string productName, double productPrice) {
-        //TO-DO: Write Your Code Here
-        //
-        //
-
+    Product(string productName, double productPrice)
+    {
+        name = productName;
+        price = productPrice;
+        cout << "Product created: " << name << " ($" << price << ")"<< endl;
     }
 
     // Destructor
-    //TO-DO: Write Your Code Here
-    //
-    //
+    ~Product()
+    {
+        cout << "Product deleted: " << name << endl;
+    }
 
     // Getters
-    //TO-DO: Write Your Code Here
-    //
-    //
-
+    string getName() const
+    {
+        return name;
+    }
+    double getPrice() const
+    {
+        return price;
+    }
 
     // Setter for price (ensures non-negative value)
-    void setPrice(double newPrice) {
-        //TO-DO: Write Your Code Here
-        //
-        //
-
+    void setPrice(double newPrice)
+    {
+        if (newPrice >= 0)
+        {
+            price = newPrice;
+        } else
+        {
+            cout << "Price cannot be negative." << endl;
+        }
     }
 };
 
-
-int main() {
+int main() 
+{
     // Creating Product objects
     Product product1("Laptop", 999.99);
     Product product2("Phone", 499.50);

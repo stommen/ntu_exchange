@@ -5,9 +5,10 @@ CXX = /usr/bin/clang++
 CXXFLAGS = -std=gnu++14 -stdlib=libc++ -fcolor-diagnostics -fansi-escape-codes -g
 
 # Directories
-LAB1 = lab_1_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
-LAB2 = lab_2_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
-LAB3 = lab_3_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
+LAB1 = Labs/lab_1_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
+LAB2 = Labs/lab_2_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
+LAB3 = Labs/lab_3_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
+ASSIGN = Assignment_1_2_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
 BUILD_DIR = build
 
 # Ensure the build directory exists
@@ -50,7 +51,31 @@ $(BUILD_DIR)/lab_3_q1: $(LAB3)/lab_3_q1.cpp
 lab3_q2: $(BUILD_DIR)/lab_3_q2
 
 $(BUILD_DIR)/lab_3_q2: $(LAB3)/lab_3_q2.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+# Build assign1_q1
+assign1_q1: $(BUILD_DIR)/assign_1_q1
+
+$(BUILD_DIR)/assign_1_q1: $(ASSIGN)/assignment_1_q1.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+# Build assign1_q2
+assign1_q2: $(BUILD_DIR)/assign_1_q2
+
+$(BUILD_DIR)/assign_1_q2: $(ASSIGN)/assignment_1_q2.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+# Build assign1_q1
+assign2_q1: $(BUILD_DIR)/assign_2_q1
+
+$(BUILD_DIR)/assign_2_q1: $(ASSIGN)/assignment_2_q1.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+# Build assign2_q2
+assign2_q2: $(BUILD_DIR)/assign_2_q2
+
+$(BUILD_DIR)/assign_2_q2: $(ASSIGN)/assignment_2_q2.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 # Clean the build directory
 clean:

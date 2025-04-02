@@ -1,13 +1,14 @@
-///////// Student Info/////////
+///////// Student Info /////////
 //
-//           Your Name:__________
-//      Your NTU Email:__________
+//           Your Name: Oscar Stommendal
+//      Your NTU Email: N2402294F@e.ntu.edu.sg
 //
 //
 //
 #include <iostream>
 
-class Complex {
+class Complex 
+{
 private:
     double real;
     double imag;
@@ -17,23 +18,27 @@ public:
     Complex(double r, double i) : real(r), imag(i) {}
 
     // Overloading the + operator
-    // TODO: Write Your Code Here
-    //
-    //
+    Complex operator+(const Complex& other) const
+    {
+        return Complex(real + other.real, imag + other.imag);
+    }
 
     // Overloading the - operator
-    // TODO: Write Your Code Here
-    //
-    //
-
+    Complex operator-(const Complex& other) const
+    {
+        return Complex(real - other.real, imag - other.imag);
+    }
 
     // Overloading the << operator for output
     friend std::ostream& operator<<(std::ostream& out, const Complex& c) {
-        // TODO: Write Your Code Here
-        //
-        //
-
-
+        if (c.imag >= 0) 
+        {
+            out << c.real << " + " << c.imag << "i";
+        } else 
+        {
+            out << c.real << " - " << -c.imag << "i";
+        }
+        return out;
     }
 };
 

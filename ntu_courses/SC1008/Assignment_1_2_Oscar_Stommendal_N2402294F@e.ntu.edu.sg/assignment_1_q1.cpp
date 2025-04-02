@@ -3,16 +3,38 @@
 
 ////// To-do: Write Your Code Here//////////////
 // Template function mergeArrays()  to merge two arrays
-//
-//
-
-
+template <typename T>
+void mergeArrays(T* arr1, int size1, T* arr2, int size2, T*& mergedArray) 
+{
+    // Allocate memory for the merged array
+    mergedArray = new T[size1 + size2];
+    
+    // Copy elements from the first array
+    for (int i = 0; i < size1; ++i) {
+        mergedArray[i] = arr1[i];
+    }
+    
+    // Copy elements from the second array
+    for (int i = 0; i < size2; ++i) {
+        mergedArray[size1 + i] = arr2[i];
+    }
+}
 
 ////// To-do: Write Your Code Here//////////////
 // Template function printAndDeallocate() to print and deallocate the merged array
-//
-//
+template <typename T>
+void printAndDeallocate(T* mergedArray, int mergedSize)
+{
+    // Print the merged array
+    std::cout << "Merged Array: ";
+    for (int i = 0; i < mergedSize; ++i) {
+        std::cout << mergedArray[i] << " ";
+    }
+    std::cout << std::endl;
 
+    // Deallocate the merged array
+    delete[] mergedArray;
+}
 
 int main() {
     // Case 1: Integers
