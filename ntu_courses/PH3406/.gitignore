@@ -5,3 +5,5 @@ hello_world.ipynb
 data/*
 figs/*
 ph3406_project_hand_in_code_OS.py
+*.zip
+receipt*

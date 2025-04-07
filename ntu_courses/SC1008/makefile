@@ -8,6 +8,7 @@ CXXFLAGS = -std=gnu++14 -stdlib=libc++ -fcolor-diagnostics -fansi-escape-codes -
 LAB1 = Labs/lab_1_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
 LAB2 = Labs/lab_2_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
 LAB3 = Labs/lab_3_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
+LAB4 = Labs/lab_4_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
 ASSIGN = Assignment_1_2_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
 BUILD_DIR = build
 
@@ -51,6 +52,18 @@ $(BUILD_DIR)/lab_3_q1: $(LAB3)/lab_3_q1.cpp
 lab3_q2: $(BUILD_DIR)/lab_3_q2
 
 $(BUILD_DIR)/lab_3_q2: $(LAB3)/lab_3_q2.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+# Build lab4_q1
+lab4_q1: $(BUILD_DIR)/lab_4_q1
+
+$(BUILD_DIR)/lab_4_q1: $(LAB4)/lab_4_q1.cpp
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+# Build lab4_q2
+lab4_q2: $(BUILD_DIR)/lab_4_q2
+
+$(BUILD_DIR)/lab_4_q2: $(LAB4)/lab_4_q2.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 # Build assign1_q1
