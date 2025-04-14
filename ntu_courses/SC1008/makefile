@@ -67,27 +67,27 @@ $(BUILD_DIR)/lab_4_q2: $(LAB4)/lab_4_q2.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 # Build assign1_q1
-assign1_q1: $(BUILD_DIR)/assign_1_q1
+assign1_q1: $(BUILD_DIR)/q1_mergeArrays
 
-$(BUILD_DIR)/assign_1_q1: $(ASSIGN)/assignment_1_q1.cpp
+$(BUILD_DIR)/q1_mergeArrays: $(ASSIGN)/q1_mergeArrays.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 # Build assign1_q2
-assign1_q2: $(BUILD_DIR)/assign_1_q2
+assign1_q2: $(BUILD_DIR)/q2_removeDuplicateName
 
-$(BUILD_DIR)/assign_1_q2: $(ASSIGN)/assignment_1_q2.cpp
+$(BUILD_DIR)/q2_removeDuplicateName: $(ASSIGN)/q2_removeDuplicateName.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# Build assign1_q1
-assign2_q1: $(BUILD_DIR)/assign_2_q1
+# Build assign2_q1
+assign2_q1: $(BUILD_DIR)/q1_shape
 
-$(BUILD_DIR)/assign_2_q1: $(ASSIGN)/assignment_2_q1.cpp
+$(BUILD_DIR)/q1_shape: $(ASSIGN)/q1_shape.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 # Build assign2_q2
-assign2_q2: $(BUILD_DIR)/assign_2_q2
+assign2_q2: $(BUILD_DIR)/q2_phonebook
 
-$(BUILD_DIR)/assign_2_q2: $(ASSIGN)/assignment_2_q2.cpp
+$(BUILD_DIR)/q2_phonebook: $(ASSIGN)/q2_phonebook.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
 # Clean the build directory
