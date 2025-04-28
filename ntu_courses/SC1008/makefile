@@ -9,7 +9,7 @@ LAB1 = Labs/lab_1_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
 LAB2 = Labs/lab_2_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
 LAB3 = Labs/lab_3_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
 LAB4 = Labs/lab_4_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
-ASSIGN = Assignment_1_2_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
+ASSIGN = Assign_1_2_Oscar_Stommendal_N2402294F@e.ntu.edu.sg
 BUILD_DIR = build
 
 # Ensure the build directory exists
